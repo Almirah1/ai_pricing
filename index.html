@@ -339,6 +339,91 @@
   .temp-slider-wrap input[type=range] { flex: 1; }
   .temp-value { color: #eab308; font-weight: 600; font-size: 14px; min-width: 32px; text-align: right; }
 
+  /* Navigation Tabs */
+  .nav-tabs { display: flex; gap: 0; margin-top: 16px; }
+  .nav-tab {
+    background: transparent; border: none; color: #777; padding: 10px 20px;
+    font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit;
+    border-bottom: 2px solid transparent; transition: all 0.2s;
+  }
+  .nav-tab:hover { color: #ccc; }
+  .nav-tab.active { color: #eab308; border-bottom-color: #eab308; }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Simulation Page */
+  .sim-section { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .sim-section h3 { color: #eab308; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px; }
+
+  .sim-strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sim-strat-item {
+    background: #111; border: 1px solid #1f1f1f; border-radius: 8px; padding: 12px 14px;
+    cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px;
+  }
+  .sim-strat-item:hover { border-color: #2a2a2a; }
+  .sim-strat-item.selected { border-color: #eab308; background: rgba(234,179,8,0.04); }
+  .sim-strat-item .sim-check {
+    width: 20px; height: 20px; border-radius: 4px; border: 2px solid #2a2a2a;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 12px; color: #000; transition: all 0.2s;
+  }
+  .sim-strat-item.selected .sim-check { background: #eab308; border-color: #eab308; }
+  .sim-strat-item .sim-strat-info { flex: 1; }
+  .sim-strat-item .sim-strat-name { color: #e2e8f0; font-size: 13px; font-weight: 500; }
+  .sim-strat-item .sim-strat-meta { color: #666; font-size: 11px; margin-top: 2px; }
+
+  .sim-run-btn {
+    background: linear-gradient(135deg, #eab308, #ca8a04); border: none; color: #000;
+    padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: opacity 0.2s; width: 100%;
+    letter-spacing: 0.5px;
+  }
+  .sim-run-btn:hover { opacity: 0.9; }
+  .sim-run-btn:disabled { background: #2a2a2a; color: #555; cursor: default; }
+
+  .sim-results { animation: fadeIn 0.4s ease; }
+  .sim-result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .sim-result-header h3 { margin: 0; }
+
+  .sim-combo-card {
+    background: #111; border: 1px solid #1f1f1f; border-radius: 10px; padding: 18px;
+    margin-bottom: 14px; transition: all 0.3s;
+  }
+  .sim-combo-card.recommended { border-color: #eab308; background: rgba(234,179,8,0.03); }
+  .sim-combo-card.recommended::before {
+    content: '★ RECOMMENDED'; display: block; color: #eab308; font-size: 10px;
+    font-weight: 700; letter-spacing: 1.5px; margin-bottom: 8px;
+  }
+  .sim-combo-title { color: #f1f5f9; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .sim-combo-strategies { color: #999; font-size: 12px; margin-bottom: 12px; }
+
+  .sim-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+  .sim-metric {
+    background: #0a0a0a; border-radius: 8px; padding: 10px; text-align: center;
+  }
+  .sim-metric-label { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .sim-metric-value { font-size: 18px; font-weight: 700; }
+
+  .sim-synergy { font-size: 12px; color: #999; padding: 10px 12px; background: #0a0a0a; border-radius: 6px; margin-bottom: 14px; }
+  .sim-synergy strong { color: #eab308; }
+
+  /* Roadmap */
+  .roadmap { position: relative; padding-left: 28px; }
+  .roadmap::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: #1f1f1f; }
+  .roadmap-phase { position: relative; margin-bottom: 18px; }
+  .roadmap-phase:last-child { margin-bottom: 0; }
+  .roadmap-dot {
+    position: absolute; left: -24px; top: 2px; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid #eab308; background: #000;
+  }
+  .roadmap-phase.active .roadmap-dot { background: #eab308; }
+  .roadmap-phase-title { color: #eab308; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .roadmap-phase-content { color: #ccc; font-size: 12px; line-height: 1.6; }
+  .roadmap-phase-time { color: #666; font-size: 11px; margin-top: 3px; }
+
+  .sim-12mo-bar { display: flex; height: 32px; border-radius: 6px; overflow: hidden; margin-bottom: 6px; }
+  .sim-12mo-segment { display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: #000; white-space: nowrap; overflow: hidden; }
+
   /* Responsive */
   @media (max-width: 768px) {
     .container { padding: 16px; }
@@ -352,6 +437,8 @@
     .combined-grid { grid-template-columns: 1fr; }
     .compare-table { font-size: 11px; }
     .compare-table th, .compare-table td { padding: 6px 8px; }
+    .sim-strategy-grid { grid-template-columns: 1fr; }
+    .sim-metrics { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -367,9 +454,15 @@
     </div>
     <button class="settings-btn" id="settingsBtn" onclick="openSettings()" title="Settings &amp; API Key">⚙</button>
   </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchPage('strategies', this)">📋 Strategies</button>
+    <button class="nav-tab" onclick="switchPage('simulation', this)">🧪 Simulation</button>
+  </div>
 </div>
 
 <div class="container">
+  <!-- ═══ STRATEGIES PAGE ═══ -->
+  <div id="page-strategies" class="page active">
   <!-- Fleet Profile -->
   <div class="fleet-profile">
     <h3>Your Fleet Profile</h3>
@@ -426,6 +519,27 @@
     <p id="footerCount"></p>
     <p class="disclaimer">Revenue estimates are projections based on industry benchmarks. Actual results vary by market, location, fleet mix, and competitive landscape. Always A/B test strategies before full rollout.</p>
   </div>
+  </div> <!-- end page-strategies -->
+
+  <!-- ═══ SIMULATION PAGE ═══ -->
+  <div id="page-simulation" class="page">
+
+    <!-- Strategy Selector -->
+    <div class="sim-section">
+      <h3>Select Strategies to Simulate</h3>
+      <p style="color:#999;font-size:12px;margin-bottom:14px;">Choose 2-6 strategies to simulate in combination. The simulator will calculate interaction effects, synergy bonuses, and generate implementation roadmaps.</p>
+      <div class="sim-strategy-grid" id="simStratGrid"></div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:16px;">
+        <button class="sim-run-btn" id="simRunBtn" onclick="runSimulation()" disabled>Run Simulation</button>
+        <span style="color:#666;font-size:12px;" id="simSelCount">Select 2-6 strategies</span>
+      </div>
+    </div>
+
+    <!-- Simulation Results -->
+    <div id="simResults"></div>
+
+  </div> <!-- end page-simulation -->
+
 </div>
 
 <!-- Settings Overlay -->
@@ -902,6 +1016,269 @@ Keep it practical and actionable. Use plain text, no markdown.` }]
     }
   }
   btn.disabled = false; btn.textContent = 'Get Personalized Advice';
+}
+
+// ─── PAGE SWITCHING ─────────────────────────────────────────────────────────
+function switchPage(pageId, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  btn.classList.add('active');
+  if (pageId === 'simulation') buildSimGrid();
+}
+
+// ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
+let simSelected = [];
+
+// Synergy matrix: pairs of strategy IDs that have positive/negative interaction
+const SYNERGIES = {
+  '1-7':  { factor: 1.15, note: 'Surge + Advance Purchase creates a powerful booking curve — early discounts fill base, surge captures late demand' },
+  '1-11': { factor: 1.12, note: 'Surge + Day-of-Week patterns stack well — weekly patterns as base layer, surge on top for events/peaks' },
+  '1-5':  { factor: 1.10, note: 'Surge + Class Yield — when demand surges, upsell gaps can widen for maximum revenue per unit' },
+  '2-10': { factor: 1.08, note: 'LOR + Corporate Tiering — corporate clients value length discounts, reinforces volume commitment' },
+  '2-7':  { factor: 0.92, note: 'LOR + Advance Purchase partially overlap — both offer time-based discounts, some cannibalization risk' },
+  '3-4':  { factor: 1.10, note: 'Competitive Parity + Channel Differentiation — rate shop competitors on OTAs while protecting direct margins' },
+  '3-8':  { factor: 1.12, note: 'Competitive Intel + Geo Pricing — competitor data is most valuable when segmented by location type' },
+  '4-6':  { factor: 1.14, note: 'Channel Differentiation + Bundles — direct channel can offer exclusive bundles, boosting margin + conversion' },
+  '5-9':  { factor: 1.08, note: 'Class Yield + One-Way Fees — dynamic class gaps + one-way pricing gives fleet-level revenue optimization' },
+  '6-12': { factor: 1.18, note: 'Bundles + Fuel Options — combining protection bundles with prepaid fuel creates compelling "all-in" packages' },
+  '6-2':  { factor: 1.06, note: 'Bundles + LOR — longer rentals with bundles lock in higher total ancillary revenue per booking' },
+  '7-11': { factor: 1.10, note: 'Advance Purchase + Day-of-Week — booking window curve shaped by weekly demand patterns for precision' },
+  '8-10': { factor: 1.09, note: 'Geo Pricing + Corporate — off-airport locations can target local corporate accounts more aggressively' },
+  '9-8':  { factor: 1.13, note: 'One-Way + Geo Pricing — location-aware one-way pricing maximizes rebalancing revenue' },
+  '1-3':  { factor: 0.88, note: 'Surge + Competitive Parity can conflict — surge pricing may be constrained by competitor-matching floors' },
+  '11-1': { factor: 1.12, note: 'Day-of-Week + Surge layer well — predictable base with dynamic surge overlay' },
+};
+
+function getSynergyKey(a, b) {
+  const lo = Math.min(a, b), hi = Math.max(a, b);
+  return lo + '-' + hi;
+}
+
+function calcCombination(ids) {
+  // Base combined impact (additive with diminishing returns)
+  let totalLow = 0, totalMid = 0, totalHigh = 0;
+  const strats = ids.map(id => STRATEGIES.find(s => s.id === id));
+
+  // Sort by impact for diminishing returns
+  const sorted = [...strats].sort((a, b) => b.revImpact.mid - a.revImpact.mid);
+  sorted.forEach((s, i) => {
+    const diminish = Math.pow(0.82, i); // each subsequent strategy has 82% effectiveness
+    totalLow += s.revImpact.low * diminish;
+    totalMid += s.revImpact.mid * diminish;
+    totalHigh += s.revImpact.high * diminish;
+  });
+
+  // Apply synergy multipliers
+  let synergyMult = 1.0;
+  const synergiesFound = [];
+  for (let i = 0; i < ids.length; i++) {
+    for (let j = i + 1; j < ids.length; j++) {
+      const key = getSynergyKey(ids[i], ids[j]);
+      const rev = getSynergyKey(ids[j], ids[i]);
+      const syn = SYNERGIES[key] || SYNERGIES[rev];
+      if (syn) {
+        synergyMult *= syn.factor;
+        synergiesFound.push({ pair: [strats[i], strats[j]], ...syn });
+      }
+    }
+  }
+
+  totalLow *= synergyMult;
+  totalMid *= synergyMult;
+  totalHigh *= synergyMult;
+
+  // Utilization adjustment
+  const utilMult = utilization < 60 ? 0.85 : utilization > 85 ? 1.15 : 1.0;
+  totalLow *= utilMult;
+  totalMid *= utilMult;
+  totalHigh *= utilMult;
+
+  // Risk score
+  const riskMap = { 'Low': 1, 'Low-Medium': 2, 'Medium': 3, 'Medium-High': 4, 'High': 5 };
+  const avgRisk = strats.reduce((s, x) => s + (riskMap[x.riskLevel] || 3), 0) / strats.length;
+
+  // Difficulty score
+  const diffMap = { 'Easy': 1, 'Medium': 2, 'Hard': 3 };
+  const avgDiff = strats.reduce((s, x) => s + (diffMap[x.difficulty] || 2), 0) / strats.length;
+
+  // Implementation timeline (sequential with overlap)
+  const timeWeeks = strats.reduce((t, s) => {
+    const m = s.timeToImplement.match(/(\d+)/);
+    return t + (m ? parseInt(m[1]) : 2);
+  }, 0) * 0.7; // 30% overlap
+
+  return {
+    strategies: strats,
+    ids,
+    low: Math.round(totalLow * 10) / 10,
+    mid: Math.round(totalMid * 10) / 10,
+    high: Math.round(totalHigh * 10) / 10,
+    revLow: Math.round(monthlyRevenue * totalLow / 100),
+    revMid: Math.round(monthlyRevenue * totalMid / 100),
+    revHigh: Math.round(monthlyRevenue * totalHigh / 100),
+    annualMid: Math.round(monthlyRevenue * totalMid / 100 * 12),
+    synergies: synergiesFound,
+    synergyMult,
+    avgRisk,
+    avgDiff,
+    timeWeeks: Math.round(timeWeeks),
+    riskLabel: avgRisk <= 1.5 ? 'Low' : avgRisk <= 2.5 ? 'Low-Med' : avgRisk <= 3.5 ? 'Medium' : 'High',
+    score: (totalMid * 2) - (avgRisk * 5) - (avgDiff * 3) + (synergiesFound.filter(s => s.factor > 1).length * 4)
+  };
+}
+
+function buildSimGrid() {
+  const grid = document.getElementById('simStratGrid');
+  grid.innerHTML = STRATEGIES.map(s => {
+    const sel = simSelected.includes(s.id);
+    return `<div class="sim-strat-item ${sel ? 'selected' : ''}" onclick="toggleSimStrat(${s.id})">
+      <div class="sim-check">${sel ? '✓' : ''}</div>
+      <div class="sim-strat-info">
+        <div class="sim-strat-name">${s.name}</div>
+        <div class="sim-strat-meta">${s.category} · ${s.difficulty} · ${s.revImpact.mid}% impact · ${s.timeToImplement}</div>
+      </div>
+    </div>`;
+  }).join('');
+  updateSimBtn();
+}
+
+function toggleSimStrat(id) {
+  if (simSelected.includes(id)) simSelected = simSelected.filter(x => x !== id);
+  else if (simSelected.length < 6) simSelected.push(id);
+  buildSimGrid();
+}
+
+function updateSimBtn() {
+  const btn = document.getElementById('simRunBtn');
+  const cnt = document.getElementById('simSelCount');
+  const n = simSelected.length;
+  btn.disabled = n < 2;
+  cnt.textContent = n < 2 ? `Select ${2 - n} more strategies` : n + ' strategies selected';
+}
+
+function runSimulation() {
+  if (simSelected.length < 2) return;
+
+  // Generate all meaningful sub-combinations (2 to N)
+  const combos = [];
+  const ids = [...simSelected];
+
+  // All pairs
+  for (let i = 0; i < ids.length; i++) {
+    for (let j = i + 1; j < ids.length; j++) {
+      combos.push(calcCombination([ids[i], ids[j]]));
+    }
+  }
+  // All triples
+  if (ids.length >= 3) {
+    for (let i = 0; i < ids.length; i++)
+      for (let j = i+1; j < ids.length; j++)
+        for (let k = j+1; k < ids.length; k++)
+          combos.push(calcCombination([ids[i], ids[j], ids[k]]));
+  }
+  // Full combination if 4+
+  if (ids.length >= 4) combos.push(calcCombination(ids));
+
+  // Sort by score descending
+  combos.sort((a, b) => b.score - a.score);
+
+  // Mark top as recommended
+  const top5 = combos.slice(0, 5);
+  if (top5.length > 0) top5[0].recommended = true;
+
+  renderSimResults(top5, combos.length);
+}
+
+function renderSimResults(top, totalCombos) {
+  const wrap = document.getElementById('simResults');
+  let html = '<div class="sim-results">';
+  html += '<div class="sim-section"><div class="sim-result-header"><h3>Simulation Results</h3>';
+  html += `<span style="color:#666;font-size:12px;">${totalCombos} combinations analyzed</span></div>`;
+
+  top.forEach((c, idx) => {
+    const names = c.strategies.map(s => s.name);
+    const shortNames = c.strategies.map(s => {
+      const words = s.name.split(' ');
+      return words.length > 3 ? words.slice(0, 3).join(' ') + '…' : s.name;
+    });
+    const riskCol = c.avgRisk <= 2 ? '#22c55e' : c.avgRisk <= 3.5 ? '#eab308' : '#ef4444';
+
+    html += `<div class="sim-combo-card ${c.recommended ? 'recommended' : ''}">`;
+    html += `<div class="sim-combo-title">Combo ${idx + 1}: ${c.strategies.length}-Strategy Package</div>`;
+    html += `<div class="sim-combo-strategies">${names.join(' + ')}</div>`;
+
+    // Metrics
+    html += '<div class="sim-metrics">';
+    html += `<div class="sim-metric"><div class="sim-metric-label">Monthly Uplift</div><div class="sim-metric-value" style="color:#eab308">+$${fmt(c.revMid)}</div></div>`;
+    html += `<div class="sim-metric"><div class="sim-metric-label">Annual Uplift</div><div class="sim-metric-value" style="color:#22c55e">+$${fmt(c.annualMid)}</div></div>`;
+    html += `<div class="sim-metric"><div class="sim-metric-label">Risk Level</div><div class="sim-metric-value" style="color:${riskCol}">${c.riskLabel}</div></div>`;
+    html += `<div class="sim-metric"><div class="sim-metric-label">Timeline</div><div class="sim-metric-value" style="color:#fff">${c.timeWeeks}wk</div></div>`;
+    html += '</div>';
+
+    // Revenue range bar
+    html += `<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:11px;color:#666;margin-bottom:3px"><span>Conservative: +$${fmt(c.revLow)}/mo</span><span>Optimistic: +$${fmt(c.revHigh)}/mo</span></div>`;
+    html += `<div style="position:relative;height:8px;background:#161616;border-radius:4px;overflow:hidden"><div style="position:absolute;left:${Math.max(0, c.low / (c.high * 1.2) * 100)}%;width:${Math.min(100, (c.high - c.low) / (c.high * 1.2) * 100)}%;height:100%;background:linear-gradient(90deg,#ca8a04,#eab308);border-radius:4px;opacity:0.8"></div></div></div>`;
+
+    // Synergies
+    if (c.synergies.length > 0) {
+      html += '<div class="sim-synergy">';
+      c.synergies.forEach(syn => {
+        const icon = syn.factor >= 1 ? '🔗' : '⚠️';
+        const pct = Math.round((syn.factor - 1) * 100);
+        const sign = pct >= 0 ? '+' : '';
+        html += `<div style="margin-bottom:6px">${icon} <strong>${syn.pair[0].name.split(' ').slice(0,2).join(' ')} × ${syn.pair[1].name.split(' ').slice(0,2).join(' ')}</strong> (${sign}${pct}% synergy): ${syn.note}</div>`;
+      });
+      html += `<div style="margin-top:8px;color:#eab308;">Net synergy multiplier: ${c.synergyMult >= 1 ? '+' : ''}${Math.round((c.synergyMult - 1) * 100)}%</div>`;
+      html += '</div>';
+    }
+
+    // Implementation Roadmap
+    html += '<div style="margin-top:14px"><h4 style="color:#eab308;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px">Implementation Roadmap</h4>';
+
+    // 12-month timeline bar
+    const colors = ['#eab308', '#fbbf24', '#fde047', '#ca8a04', '#a16207', '#854d0e'];
+    const totalWeeks = c.strategies.reduce((t, s) => { const m = s.timeToImplement.match(/(\d+)/); return t + (m ? parseInt(m[1]) : 2); }, 0);
+    html += '<div class="sim-12mo-bar">';
+    let weekOffset = 0;
+    c.strategies.forEach((s, i) => {
+      const m = s.timeToImplement.match(/(\d+)/);
+      const wks = m ? parseInt(m[1]) : 2;
+      const pct = (wks / Math.max(totalWeeks, 1)) * 100;
+      html += `<div class="sim-12mo-segment" style="width:${pct}%;background:${colors[i % colors.length]}">${s.name.split(' ')[0]}</div>`;
+      weekOffset += wks;
+    });
+    html += '</div>';
+    html += `<div style="font-size:10px;color:#666;margin-bottom:14px;text-align:center">Estimated ${c.timeWeeks}-week phased rollout</div>`;
+
+    // Detailed roadmap
+    html += '<div class="roadmap">';
+    const sorted = [...c.strategies].sort((a, b) => {
+      const dO = { Easy: 0, Medium: 1, Hard: 2 };
+      return dO[a.difficulty] - dO[b.difficulty];
+    });
+    let cumulWeeks = 0;
+    sorted.forEach((s, i) => {
+      const m = s.timeToImplement.match(/(\d+)/);
+      const wks = m ? parseInt(m[1]) : 2;
+      const startWk = cumulWeeks + 1;
+      cumulWeeks += Math.round(wks * 0.7);
+      const endWk = cumulWeeks;
+      const phase = i === 0 ? 'Quick Win' : i === 1 ? 'Foundation' : i === 2 ? 'Optimization' : 'Advanced';
+      html += `<div class="roadmap-phase ${i === 0 ? 'active' : ''}">`;
+      html += `<div class="roadmap-dot"></div>`;
+      html += `<div class="roadmap-phase-title">Phase ${i + 1}: ${phase}</div>`;
+      html += `<div class="roadmap-phase-content"><strong>${s.name}</strong> — ${s.implementation.split('.')[0]}.</div>`;
+      html += `<div class="roadmap-phase-time">Week ${startWk}–${endWk} · ${s.difficulty} difficulty · Est. +$${fmt(Math.round(monthlyRevenue * s.revImpact.mid / 100))}/mo when live</div>`;
+      html += '</div>';
+    });
+    html += '</div></div>';
+
+    html += '</div>'; // close combo card
+  });
+
+  html += '</div></div>';
+  wrap.innerHTML = html;
 }
 
 // ─── KEYBOARD & INIT ────────────────────────────────────────────────────────
